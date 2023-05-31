@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/ListFragment">
+
+    <fragment
+        android:id="@+id/ListFragment"
+        android:name="com.example.latihanroomdb.ListFragment"
+        android:label="list_fragment"
+        tools:layout="@layout/fragment_list">
+        <action
+            android:id="@+id/action_ListFragment_to_AddFragment"
+            app:destination="@id/AddFragment" />
+        <action
+            android:id="@+id/action_ListFragment_to_updateFragment"
+            app:destination="@id/updateFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/AddFragment"
+        android:name="com.example.latihanroomdb.AddFragment"
+        android:label="AddFragment"
+        tools:layout="@layout/fragment_add" >
+        <action
+            android:id="@+id/action_AddFragment_to_ListFragment"
+            app:destination="@id/ListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateFragment"
+        android:name="com.example.latihanroomdb.UpdateFragment"
+        android:label="fragment_update"
+        tools:layout="@layout/fragment_update" >
+        <argument
+            android:name="currentUser"
+            app:argType="com.example.latihanroomdb.data.User" />
+        <action
+            android:id="@+id/action_updateFragment_to_ListFragment"
+            app:destination="@id/ListFragment" />
+    </fragment>
+    <!--    <fragment-->
+<!--        android:id="@+id/fragment3"-->
+<!--        android:name="com.example.latihanroomdb.Fragment3"-->
+<!--        android:label="fragment_3"-->
+<!--        tools:layout="@layout/fragment_3" />-->
+</navigation>
